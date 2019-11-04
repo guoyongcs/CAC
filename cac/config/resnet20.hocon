@@ -1,0 +1,51 @@
+{
+  net: {
+    name: resnet20,
+    lambda: 0.2,
+    pretrained: true,
+  },
+  dataset: {
+    name: cifar10,
+    n_classes: 10,
+    root: .data/cifar10,
+    mean: [
+      0.49139968,
+      0.48215827,
+      0.44653124
+    ],
+    std: [
+      0.24703233,
+      0.24348505,
+      0.26158768
+    ]
+  },
+  optimizer: {
+    learning_rate: 0.1,
+    momentum: 0.9,
+    dampening: 0,
+    weight_decay: 0.0001,
+    nesterov: true
+  },
+  strategy: {
+    epochs: 400,
+    train: {
+      batch_size: 128
+    },
+    validation: {
+      batch_size: 128
+    }
+  },
+  scheduler: {
+    type: MultiStepLR,
+    milestones: [
+      160,
+      240
+    ],
+    gamma: 0.1
+  },
+  machine: {
+    num_workers: 4,
+    parallel: false
+    log_frequency: 10
+  }
+}
