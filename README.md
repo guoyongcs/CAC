@@ -26,7 +26,7 @@ ImageNet needs to be manually downloaded (preferably to a SSD) following the ins
 
 <img src="./imgs/CAC_algorithm.png" width="450px" />
 
-## Training
+## Training Method
 
 Please run the following command in ```cac``` directory:
 
